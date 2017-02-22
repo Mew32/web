@@ -1,4 +1,4 @@
-<div>
+<header>
 	<img src="placehold.it/50x50" />
 	<h1>Hello</h1>
 	<nav>
@@ -8,4 +8,4 @@
 			<li><a href="Add">Add Page</a></li>
 		</ul>
 	</nav>
-</div>
+</header>
