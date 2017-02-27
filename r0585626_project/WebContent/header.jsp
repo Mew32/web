@@ -1,4 +1,4 @@
-<header>
+<header id="pageheader">
 	<img src="placehold.it/50x50" />
 	<h1>Hello</h1>
 	<nav>
