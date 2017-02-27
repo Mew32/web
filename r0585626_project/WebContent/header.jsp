@@ -3,9 +3,9 @@
 	<h1>Hello</h1>
 	<nav>
 		<ul>
-			<li><a href="">Home</a></li>
-			<li><a href="Overview">Tracker Overview</a></li>
-			<li><a href="Add">Add Page</a></li>
+			<li><a href="home.jsp">Home</a></li>
+			<li><a href="overview.jsp">Tracker Overview</a></li>
+			<li><a href="add.jsp">Add Page</a></li>
 		</ul>
 	</nav>
 </header>
