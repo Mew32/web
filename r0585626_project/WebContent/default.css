@@ -1,13 +1,129 @@
-body {
-	display: flex;
-	flex-direction: column;
+html {
+    background-color: #e3fcb5;
 }
 
-#pageheader{
-	flex-direction: row;
+body>*:not(header) {
+    margin-top: 2%;
 }
 
-#pageheader a{
-	text-decoration: none;
+body * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
+#pageheader nav,
+#pagefooter nav {
+    background-color: #8fdb8a;
+}
+
+article {
+    background-color: #5b8c58;
+}
+
+#pageheader h1 {
+    z-index: 1;
+}
+
+#pageheader nav ul,
+#pagefooter nav ul {
+    width: 100%;
+}
+
+#pageheader nav li,
+#pagefooter nav li {
+    border-top: 2px solid black;
+}
+
+#current {
+    background-color: #b1fc5a;
+}
+
+#pageheader nav li:last-child,
+#pagefooter nav li:last-child {
+    border-bottom: 2px solid black;
+}
+
+#pageheader nav li a,
+#pagefooter nav li a {
+    padding: 2% 10% 2% 10%;
+    text-decoration: none;
+    color: black;
+}
+
+article p {
+    width: auto;
+    padding: 1% 1% 1% 1%;
+}
+
+article h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+form input,
+form p {
+    width: 95%;
+}
+
+form input:focus {
+    border: 2px solid red;
+}
+
+table tr {
+    flex-direction: row;
+}
+
+table tr:nth-child(2) {
+    background: #7cb279;
+}
+
+table th {
+    font-size: 1.5em;
+    text-align: left;
+}
+
+table td,
+table th {
+    display: table-cell;
+    margin: 2%;
+}
+
+@media screen and (min-width: 480px) {
+    body * {
+        width: 90%;
+    }
+    #pageheader nav ul,
+    #pagefooter nav ul {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+    #pageheader nav li,
+    #pagefooter nav li {
+        width: 33.3333%;
+        border-bottom: none;
+        border-top: none;
+        border-left: 2px solid black;
+        border-right: 2px solid black;
+    }
+    #pageheader nav li:last-child,
+    #pagefooter nav li:last-child {
+        border-bottom: none;
+    }
+    #pageheader nav li a,
+    #pagefooter nav li a {
+        padding: 5% 2% 5% 2%;
+    }
+    form {
+        max-width: 50%;
+    }
+    form input {
+        width: 50%;
+    }
+    form p label {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
