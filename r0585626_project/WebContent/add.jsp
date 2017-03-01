@@ -8,7 +8,9 @@
 <title>Add Page - Movie Tracker</title>
 </head>
 <body>
-<jsp:include page="header.jsp"/>
+<jsp:include page="header.jsp">
+		<jsp:param name="page" value="add"/>
+    </jsp:include>
 	<main>
 		<article>
 			<h2>Add a new series.</h2>

@@ -8,7 +8,9 @@
 <title>Overview - Movie Tracker</title>
 </head>
 <body>
-	<jsp:include page="header.jsp"/>
+	<jsp:include page="header.jsp">
+		<jsp:param name="page" value="overview"/>
+    </jsp:include>
 	<main>
 		<article>
 			<h2>Overview</h2>
