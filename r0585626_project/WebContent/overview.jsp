@@ -8,6 +8,7 @@
 <title>Overview - Movie Tracker</title>
 </head>
 <body>
+	<div id="pagewrapper">
 	<jsp:include page="header.jsp">
 		<jsp:param name="page" value="overview"/>
     </jsp:include>
@@ -36,5 +37,6 @@
 			</div>
 		</article>
 	</main>
+	</div>
 </body>
 </html>

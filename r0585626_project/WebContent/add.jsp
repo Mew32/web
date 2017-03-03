@@ -8,6 +8,7 @@
 <title>Add Page - Movie Tracker</title>
 </head>
 <body>
+	<div id="pagewrapper">
 <jsp:include page="header.jsp">
 		<jsp:param name="page" value="add"/>
     </jsp:include>
@@ -24,5 +25,6 @@
 </form>
 		</article>
 	</main>
+	</div>
 </body>
 </html>

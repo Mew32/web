@@ -13,9 +13,9 @@
 			 case "add": s3 = "id=\"current\""; break;
 			 }
 			 %>
-			<li><a href="home.jsp" <%= s1 %>>Home</a></li>
-			<li><a href="overview.jsp" <%= s2 %>>Tracker Overview</a></li>
-			<li><a href="add.jsp" <%= s3 %>>Add Page</a></li>
+			<li <%= s1 %>><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
+			<li <%= s2 %>><a href="${pageContext.request.contextPath}/overview.jsp">Tracker Overview</a></li>
+			<li <%= s3 %>><a href="${pageContext.request.contextPath}/add.jsp">Add Page</a></li>
 			
 		</ul>
 	</nav>

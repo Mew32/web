@@ -2,12 +2,12 @@ html {
     background-color: #e3fcb5;
 }
 
-body>*:not(header) {
+#pagewrapper>*:not(header) {
     margin-top: 2%;
 }
 
-body * {
-    display: flex;
+#pagewrapper {
+	display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -71,7 +71,7 @@ form input:focus {
     border: 2px solid red;
 }
 
-table tr {
+#pagewrapper table tr {
     flex-direction: row;
 }
 
@@ -91,7 +91,11 @@ table th {
 }
 
 @media screen and (min-width: 480px) {
-    body * {
+	#pagewrapper {
+		margin: 0 5%;
+		align-items: center;
+	}
+    #pagewrapper * {
         width: 90%;
     }
     #pageheader nav ul,
@@ -116,13 +120,13 @@ table th {
     #pagefooter nav li a {
         padding: 5% 2% 5% 2%;
     }
-    form {
+    #pagewrapper form {
         max-width: 50%;
     }
-    form input {
+    #pagewrapper form input {
         width: 50%;
     }
-    form p label {
+    #pagewrapper form p label {
         flex-direction: row;
         justify-content: space-between;
     }
