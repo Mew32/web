@@ -104,6 +104,7 @@ table th {
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-around;
+        align-content: center;
     }
     #pageheader nav li,
     #pagefooter nav li {
@@ -122,13 +123,14 @@ table th {
         padding: 5% 2% 5% 2%;
     }
     #pagewrapper form {
+    	display: flex
         max-width: 50%;
     }
     #pagewrapper form input {
         width: 50%;
     }
     #pagewrapper form p label {
-    	display: flex
+    	display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
