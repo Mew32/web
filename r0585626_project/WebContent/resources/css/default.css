@@ -100,6 +100,7 @@ table th {
     }
     #pageheader nav ul,
     #pagefooter nav ul {
+    	display: flex;
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-around;
@@ -127,6 +128,7 @@ table th {
         width: 50%;
     }
     #pagewrapper form p label {
+    	display: flex
         flex-direction: row;
         justify-content: space-between;
     }
