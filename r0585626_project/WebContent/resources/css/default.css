@@ -2,12 +2,12 @@ html {
     background-color: #e3fcb5;
 }
 
-#pagewrapper>*:not(header) {
+body>*:not(header) {
     margin-top: 2%;
 }
 
-#pagewrapper {
-	display: flex;
+body * {
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -71,7 +71,7 @@ form input:focus {
     border: 2px solid red;
 }
 
-#pagewrapper table tr {
+table tr {
     flex-direction: row;
 }
 
@@ -91,20 +91,14 @@ table th {
 }
 
 @media screen and (min-width: 480px) {
-	#pagewrapper {
-		margin: 0 5%;
-		align-items: center;
-	}
-    #pagewrapper * {
+    body * {
         width: 90%;
     }
     #pageheader nav ul,
     #pagefooter nav ul {
-    	display: flex;
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-around;
-        align-content: center;
     }
     #pageheader nav li,
     #pagefooter nav li {
@@ -122,15 +116,13 @@ table th {
     #pagefooter nav li a {
         padding: 5% 2% 5% 2%;
     }
-    #pagewrapper form {
-    	display: flex
+    form {
         max-width: 50%;
     }
-    #pagewrapper form input {
+    form input {
         width: 50%;
     }
-    #pagewrapper form p label {
-    	display: flex;
+    form p label {
         flex-direction: row;
         justify-content: space-between;
     }
