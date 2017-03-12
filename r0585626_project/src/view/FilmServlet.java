@@ -21,7 +21,7 @@ public class FilmServlet extends HttpServlet {
      */
     public FilmServlet() {
         super();
-        db = new FilmDb();
+        db = FilmDb.getInstance();
     }
 
 	/**

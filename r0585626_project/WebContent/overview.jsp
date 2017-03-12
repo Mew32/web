@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="domain.FilmDb, domain.Film"%>
 <!DOCTYPE html">
 <html>
 <head>
@@ -21,18 +21,14 @@
 			<th>Total Episodes</th>
 			<th>Watched Episodes</th>
 			<th>Rating</th></tr>
-				<tr>
-					<td>HIMYM</td>
-					<td>192</td>
-					<td>192</td>
-					<td>7/10</td>
-				</tr>
-				<tr>
-					<td>HIMYM</td>
-					<td>192</td>
-					<td>192</td>
-					<td>7/10</td>
-				</tr>
+			<% for(Film f : FilmDb.getInstance().getFilms()){
+				%> <tr>
+					<td><%= f.getName() %></td>
+					<td><%= f.getTotalLength()%></td>
+					<td><%= f.getWatchedLength()%></td>
+					<td><%= f.getRating() %></td>
+				</tr> <%
+			}%>
 			</table>
 			</div>
 		</article>
