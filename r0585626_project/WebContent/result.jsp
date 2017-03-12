@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <jsp:include page="css.jsp"/>
-<title>Movie Tracker</title>
+<title>Result page - Movie Tracker</title>
 </head>
 <body>
 	<div id="pagewrapper">
@@ -15,12 +15,7 @@
 	<main>
 		<article>
 			<h2>Movie Tracker</h2>
-			<% String name = FilmDb.getInstance().getBestFilm().getName();
-			if (name != null){%>
-				<p>The best movie is <%= name  %></p>
-			<% }else{  %>
-				<p>There is no best movie yet.</p>
-			<% } %>
+			<p> You added <%= request.getParameter("name") %>; <%= request.getParameter("total") %>;<%= request.getParameter("watched") %>;<%= request.getParameter("rating") %>. </p>
 			<p><a href="${pageContext.request.contextPath}/overview.jsp">Overview</a></p>
 		</article>
 	</main>

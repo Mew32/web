@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import domain.Film;
 import domain.FilmDb;
 
 @WebServlet("/FilmServlet")
@@ -27,8 +28,21 @@ public class FilmServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		String name = request.getParameter("name");
+		String totalSt = request.getParameter("total");
+		String watchedSt = request.getParameter("watched");
+		String ratingSt = request.getParameter("rating");
+		try{
+			int total = Integer.parseInt(totalSt);
+			int watched = Integer.parseInt(watchedSt);
+			double rating = Double.parseDouble(ratingSt);
+			Film f = new Film(name, total, watched, rating);
+			db.addFilm(f);
+			request.getRequestDispatcher("/result.jsp").forward(request, response);
+		}catch (Exception e){
+			
+		}
 	}
 
 	/**

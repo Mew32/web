@@ -9,6 +9,9 @@ public class Film {
 	
 	public Film(String name, int watched, int total, double rating){
 		this.name = name;
+		setWatchedLength(watched);
+		setTotalLength(total);
+		setRating(rating);
 	}
 
 	public int getWatchedLength() {

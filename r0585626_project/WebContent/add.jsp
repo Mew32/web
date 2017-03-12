@@ -15,12 +15,12 @@
 	<main>
 		<article>
 			<h2>Add a new series.</h2>
-			<form>
-	<p><label for="naam">Series name:<input type="text" size="50" maxlength="30" id="naam" required=""></label></p> 
- <p><label for="total_eps">Amount of episodes: <input id="total_eps" type="number" min="1" step="1"></label></p>
- <p><label for="watched_eps">#Episodes watched: <input id="watched_eps" type="number" min="1" step="1"></label></p>
- <p><label for="rating">Rating: <input id="rating" type="number" min="1" max="10" step="1" value="1"></label></p>
- <p><input type="submit" name="submit" id="submitbtn" class="submitbtn" value="Save"></p>
+			<form METHOD="GET" action="FilmServlet">
+	<p><label for="naam">Series name:<input type="text" size="50" maxlength="30" id="naam" required="" name="name"></label></p> 
+ <p><label for="total_eps">Amount of episodes: <input id="total_eps" type="number" min="1" step="1" name="total"></label></p>
+ <p><label for="watched_eps">#Episodes watched: <input id="watched_eps" type="number" min="1" step="1" name="watched"></label></p>
+ <p><label for="rating">Rating: <input id="rating" type="number" min="1" max="10" step="0.01" value="1" name="rating"></label></p>
+ <p><input type="submit" id="submitbtn" class="submitbtn" value="Save"></p>
  
 </form>
 		</article>
