@@ -7,7 +7,7 @@ public class Film {
 	private int total_length;
 	private double rating;
 	
-	public Film(String name, int watched, int total, double rating){
+	public Film(String name, int total, int watched, double rating){
 		this.name = name;
 		setWatchedLength(watched);
 		setTotalLength(total);
