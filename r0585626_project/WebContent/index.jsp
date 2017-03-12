@@ -14,9 +14,7 @@
     </jsp:include>
 	<main>
 		<article>
-			<h2>Title</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero eius repellendus nihil amet nulla iste sequi ab consectetur inventore odio magni optio at distinctio aliquam dolor modi quia officia totam.</p>
-			<p>Alias et nisi doloribus nam iure voluptates reiciendis facere ratione sint ipsum dolore debitis corporis eligendi sapiente fuga repellendus id quos praesentium magnam eum optio! Atque laborum hic reprehenderit minus.</p>
+			<h2>Movie Tracker</h2>
 			<p><a href="Overview">Overview</a></p>
 		</article>
 	</main>
