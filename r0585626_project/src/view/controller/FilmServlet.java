@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import domain.Film;
 import domain.FilmDb;
+import domain.FilmService;
 
 @WebServlet("/FilmServlet")
 public class FilmServlet extends HttpServlet {
@@ -42,11 +43,7 @@ public class FilmServlet extends HttpServlet {
 		String watchedSt = request.getParameter("watched");
 		String ratingSt = request.getParameter("rating");
 		try{
-			int total = Integer.parseInt(totalSt);
-			int watched = Integer.parseInt(watchedSt);
-			double rating = Double.parseDouble(ratingSt);
-			Film f = new Film(name, total, watched, rating);
-			db.addFilm(f);
+			FilmService.addMovie(name, totalSt, watchedSt, ratingSt);
 			request.getRequestDispatcher("WEB-INF/result.jsp").forward(request, response);
 		}catch (Exception e){
 			request.setAttribute("error", e.getMessage());

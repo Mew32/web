@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<jsp:include page="${pageContext.request.contextPath}/css.jsp"/>
+<jsp:include page="WEB-INF/css.jsp"/>
 <title>Overview - Movie Tracker</title>
 </head>
 <body>
 	<div id="pagewrapper">
-	<jsp:include page="${pageContext.request.contextPath}/header.jsp">
+	<jsp:include page="WEB-INF/header.jsp">
 		<jsp:param name="page" value="overview"/>
     </jsp:include>
 	<main>
