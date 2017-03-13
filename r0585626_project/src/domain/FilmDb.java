@@ -14,7 +14,7 @@ public class FilmDb {
 		films.add(new Film("Game Of Thrones", 50, 50, 8));
 	}
 	
-	public static FilmDb getInstance(){
+	protected static FilmDb getInstance(){
 		if(instance == null){
 			synchronized(FilmDb.class){
 				if(instance == null){

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="domain.FilmDb, domain.Film"%>
+    pageEncoding="UTF-8" import="domain.FilmService, domain.Film"%>
 <!DOCTYPE html">
 <html>
 <head>
@@ -21,7 +21,7 @@
 			<th>Total Episodes</th>
 			<th>Watched Episodes</th>
 			<th>Rating</th></tr>
-			<% for(Film f : FilmDb.getInstance().getFilms()){
+			<% for(Film f : FilmService.getFilms()){
 				%> <tr>
 					<td><%= f.getName() %></td>
 					<td><%= f.getTotalLength()%></td>

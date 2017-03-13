@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="domain.FilmDb, domain.Film"%>
+    pageEncoding="UTF-8" import="domain.FilmService, domain.Film"%>
 <!DOCTYPE html">
 <html>
 <head>
@@ -15,7 +15,7 @@
 	<main>
 		<article>
 			<h2>Movie Tracker</h2>
-			<% String name = FilmDb.getInstance().getBestFilm().getName();
+			<% String name = FilmService.getBestFilm().getName();
 			if (name != null){%>
 				<p>The best movie is <%= name  %></p>
 			<% }else{  %>
