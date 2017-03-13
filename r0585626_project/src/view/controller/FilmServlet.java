@@ -29,6 +29,14 @@ public class FilmServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.setAttribute("error", "There is no GET request on this form.");
+		request.getRequestDispatcher("WEB-INF/error.jsp").forward(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name = request.getParameter("name");
 		String totalSt = request.getParameter("total");
 		String watchedSt = request.getParameter("watched");
@@ -39,17 +47,11 @@ public class FilmServlet extends HttpServlet {
 			double rating = Double.parseDouble(ratingSt);
 			Film f = new Film(name, total, watched, rating);
 			db.addFilm(f);
-			request.getRequestDispatcher("/result.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/result.jsp").forward(request, response);
 		}catch (Exception e){
-			
+			request.setAttribute("error", e.getMessage());
+			request.getRequestDispatcher("WEB-INF/error.jsp").forward(request, response);
 		}
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
 	}
 
 }
