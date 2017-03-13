@@ -73,10 +73,11 @@ form input:focus {
 
 table tr {
     flex-direction: row;
+    background: #7cb279;
 }
 
 table tr:nth-child(2n) {
-    background: #7cb279;
+    background: #94d891;
 }
 
 table th {
