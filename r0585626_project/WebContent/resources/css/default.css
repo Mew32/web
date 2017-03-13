@@ -95,6 +95,10 @@ table th {
     body * {
         width: 90%;
     }
+    #pagewrapper {
+    	max-width: 90%;
+    	margin: 0% 5%;
+    }
     #pageheader nav ul,
     #pagefooter nav ul {
         flex-direction: row;
