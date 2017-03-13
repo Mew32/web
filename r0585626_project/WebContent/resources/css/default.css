@@ -2,7 +2,7 @@ html {
     background-color: #e3fcb5;
 }
 
-body>*:not(header) {
+#pagewrapper>*:not(header) {
     margin-top: 2%;
 }
 
