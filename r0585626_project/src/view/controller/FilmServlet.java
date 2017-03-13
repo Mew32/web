@@ -40,7 +40,7 @@ public class FilmServlet extends HttpServlet {
 		String watchedSt = request.getParameter("watched");
 		String ratingSt = request.getParameter("rating");
 		try{
-			FilmService.addMovie(name, totalSt, watchedSt, ratingSt);
+			FilmService.addFilm(name, totalSt, watchedSt, ratingSt);
 			request.getRequestDispatcher("WEB-INF/result.jsp").forward(request, response);
 		}catch (Exception e){
 			request.setAttribute("error", e.getMessage());
