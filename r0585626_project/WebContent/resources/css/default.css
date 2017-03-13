@@ -75,7 +75,7 @@ table tr {
     flex-direction: row;
 }
 
-table tr:nth-child(2) {
+table tr:nth-child(2n) {
     background: #7cb279;
 }
 
