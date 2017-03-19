@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="domain.db.FilmDb, domain.model.Film"%>
-<!DOCTYPE html">
+<!DOCTYPE html>
 <%! FilmDb db = new FilmDb();%> 
 <html>
 <head>

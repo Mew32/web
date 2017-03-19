@@ -1,5 +1,5 @@
 <header id="pageheader">
-	<img src="http://placehold.it/1080x50" />
+	<img src="http://placehold.it/1080x50" alt="placeholder image"/>
 	<h1><%= request.getParameter("page") %></h1>
 	<nav>
 		<ul>
