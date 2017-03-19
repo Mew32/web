@@ -1,4 +1,3 @@
 <footer>
-	<div>
-	</div>
+<p>Webontwikkeling 2</p>
 </footer>

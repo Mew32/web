@@ -1,29 +1,31 @@
-package domain;
+package domain.db;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import domain.model.Film;
 
 public class FilmDb {
 	private static FilmDb instance;
 	private List<Film> films;
 	
-	private FilmDb(){
+	public FilmDb(){
 		films = new ArrayList<Film>();
 		films.add(new Film("HIMYM", 192, 192, 5));
 		films.add(new Film("The OA", 10, 10, 10));
 		films.add(new Film("Game Of Thrones", 50, 50, 8));
 	}
-	
-	protected static FilmDb getInstance(){
-		if(instance == null){
-			synchronized(FilmDb.class){
-				if(instance == null){
-					instance = new FilmDb();
-				}
-			}
-		}
-		return instance;
-	}
+//	
+//	public static FilmDb getInstance(){
+//		if(instance == null){
+//			synchronized(FilmDb.class){
+//				if(instance == null){
+//					instance = new FilmDb();
+//				}
+//			}
+//		}
+//		return instance;
+//	}
 	
 	public void addFilm(Film f){
 		films.add(f);

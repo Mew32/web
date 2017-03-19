@@ -10,7 +10,7 @@
 <body>
 	<div id="pagewrapper">
 <jsp:include page="WEB-INF/header.jsp">
-		<jsp:param name="page" value="add"/>
+		<jsp:param name="page" value="Add"/>
     </jsp:include>
 	<main>
 		<article>
@@ -25,6 +25,7 @@
 </form>
 		</article>
 	</main>
+	<jsp:include page="WEB-INF/footer.jsp"/>
 	</div>
 </body>
 </html>
