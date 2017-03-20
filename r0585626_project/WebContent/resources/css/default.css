@@ -14,7 +14,7 @@ body * {
 }
 
 #pageheader nav,
-#pagefooter nav {
+#pagefooter {
     background-color: #8fdb8a;
 }
 
@@ -46,7 +46,7 @@ article {
 }
 
 #pageheader nav li a,
-#pagefooter nav li a {
+#pagefooter {
     padding: 2% 10% 2% 10%;
     text-decoration: none;
     color: black;
