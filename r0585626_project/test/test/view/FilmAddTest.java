@@ -17,7 +17,7 @@ public class FilmAddTest {
 	
 	@Before
 	public void setUp () {
-		System.setProperty("webdriver.chrome.driver","C:/Users/User/Desktop/Uni/eclipse/chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver","C:/Users/User/Desktop/Uni/eclipse/chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 	
