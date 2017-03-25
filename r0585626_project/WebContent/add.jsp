@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +15,28 @@
 	<main>
 		<article>
 			<h2>Add a new series.</h2>
-			<form METHOD="POST" action="FilmServlet">
+			<%
+			Object errorsO = request.getAttribute("errors");
+			try{
+				List<?> errors = (List<?>) errorsO;
+				%>
+				<div id="errors">
+				<%
+				for(Object o : errors){
+					try{
+						%> <p><%= (String) o %></p> <%
+					}finally{
+						
+					}
+				}
+				%>
+				</div>
+				<%
+			}catch(Exception e){
+				
+			}
+			%>
+			<form METHOD="POST" action="FilmServlet" novalidate>
 	<p><label for="naam">Series name:<input type="text" size="50" maxlength="30" id="naam" required name="name"></label></p> 
  <p><label for="total_eps">Amount of episodes: <input id="total_eps" type="number" min="1" step="1" required name="total"></label></p>
  <p><label for="watched_eps">#Episodes watched: <input id="watched_eps" type="number" min="1" step="1"  required name="watched"></label></p>

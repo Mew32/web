@@ -13,6 +13,11 @@ body * {
     width: 100%;
 }
 
+#errors{
+	border: 1px solid darkred;
+	color: darkred;
+}
+
 #pageheader nav,
 #pagefooter {
     background-color: #8fdb8a;

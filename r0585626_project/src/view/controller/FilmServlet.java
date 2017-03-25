@@ -1,6 +1,8 @@
 package view.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,14 +42,22 @@ public class FilmServlet extends HttpServlet {
 		String totalSt = request.getParameter("total");
 		String watchedSt = request.getParameter("watched");
 		String ratingSt = request.getParameter("rating");
-		try{
-			service.addFilm(name, totalSt, watchedSt, ratingSt);
+		List<String> errors = service.addFilm(name, totalSt, watchedSt, ratingSt);
+		
+		if(errors.isEmpty()){
 			request.setAttribute("films", service.getFilms());
 			request.getRequestDispatcher("overview.jsp").forward(request, response);
-		}catch (Exception e){
-			request.setAttribute("error", e.getMessage());
-			request.getRequestDispatcher("WEB-INF/error.jsp").forward(request, response);
+		}else{
+			request.setAttribute("errors", errors);
+			request.getRequestDispatcher("add.jsp").forward(request, response);
 		}
+//		try{
+//			request.setAttribute("films", service.getFilms());
+//			request.getRequestDispatcher("overview.jsp").forward(request, response);
+//		}catch (Exception e){
+//			request.setAttribute("error", e.getMessage());
+//			request.getRequestDispatcher("WEB-INF/error.jsp").forward(request, response);
+//		}
 	}
 
 }
