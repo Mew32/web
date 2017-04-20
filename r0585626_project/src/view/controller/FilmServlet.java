@@ -31,7 +31,7 @@ public class FilmServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.setAttribute("films", service.getFilms());
-		request.getRequestDispatcher("overview.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/overview.jsp").forward(request, response);
 	}
 
 	/**
@@ -44,13 +44,13 @@ public class FilmServlet extends HttpServlet {
 		String ratingSt = request.getParameter("rating");
 		List<String> errors = service.addFilm(name, totalSt, watchedSt, ratingSt);
 		
-		if(errors.isEmpty()){
+//		if(errors.isEmpty()){
 			request.setAttribute("films", service.getFilms());
-			request.getRequestDispatcher("overview.jsp").forward(request, response);
-		}else{
-			request.setAttribute("errors", errors);
-			request.getRequestDispatcher("add.jsp").forward(request, response);
-		}
+			request.getRequestDispatcher("WEB-INF/overview.jsp").forward(request, response);
+//		}else{
+//			request.setAttribute("errors", errors);
+//			request.getRequestDispatcher("add.jsp").forward(request, response);
+//		}
 //		try{
 //			request.setAttribute("films", service.getFilms());
 //			request.getRequestDispatcher("overview.jsp").forward(request, response);

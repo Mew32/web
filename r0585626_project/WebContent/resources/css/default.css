@@ -19,7 +19,7 @@ body * {
 }
 
 #pageheader nav,
-#pagefooter {
+#pagefooter p{
     background-color: #8fdb8a;
 }
 
@@ -50,9 +50,14 @@ article {
     border-bottom: 2px solid black;
 }
 
-#pageheader nav li a,
-#pagefooter {
+#pageheader nav li a {
     padding: 2% 10% 2% 10%;
+    text-decoration: none;
+    color: black;
+}
+
+#pagefooter p {
+    padding: 2% 0%;
     text-decoration: none;
     color: black;
 }
@@ -122,6 +127,14 @@ table th {
     #pagefooter nav li:last-child {
         border-bottom: none;
     }
+    #pageheader h1 {
+        position: absolute;
+    	align-self: flex-start;
+    	text-align: left;
+    	width: 13%;
+    	padding-top: 0.5%;
+    }
+    
     #pageheader nav li a,
     #pagefooter nav li a {
         padding: 5% 2% 5% 2%;

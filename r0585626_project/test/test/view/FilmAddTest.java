@@ -8,17 +8,23 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import domain.db.*;
+import domain.model.Film;
+import domain.model.FilmService;
 
 
 public class FilmAddTest {
 
 	private static final String url = "http://localhost:8080/r0585626_project/";
 	private WebDriver driver;
-	
+	private FilmService service;
 	@Before
 	public void setUp () {
 		//System.setProperty("webdriver.chrome.driver","C:/Users/User/Desktop/Uni/eclipse/chromedriver.exe");
 		driver = new ChromeDriver();
+		service = new FilmService(new FilmDb());
 	}
 	
 	@Test
@@ -105,6 +111,46 @@ public class FilmAddTest {
 		assertEquals("Add", driver.findElement(By.tagName("h1")).getText());
 	}
 
+	@Test
+	public void test_index_toont_berekende_waarde(){
+		driver.get(url);
+		
+		WebElement berekendeWaarde = driver.findElement(By.id("calculated"));
+		assertEquals("The best movie is "+service.getBestFilm().getName(), berekendeWaarde.getText());
+	}
+
+	@Test
+	public void test_overview_toont_opgeslagen_items(){
+		driver.get(url + "FilmServlet");
+		for(Film f : service.getFilms()){
+			WebElement el = driver.findElement(By.cssSelector("."+f.getCompoundName()));
+			assertNotNull(el);
+		}
+	}
+	
+	@Test
+	public void test_html5_valide_paginas(){
+		isValidHtml("");
+		isValidHtml("FilmServlet");
+		isValidHtml("add.jsp");
+	}
+	
+	public void isValidHtml(String urlEnd) {
+		driver.get("https://validator.w3.org/#validate_by_uri+with_options");
+		WebElement invulveld = driver.findElement(By.id("uri"));
+		invulveld.sendKeys("http://java.cyclone2.khleuven.be:38034/r0585626_project/"+urlEnd);
+		
+		Select dropdown = new Select(driver.findElement(By.id("uri-doctype")));
+		dropdown.selectByValue("HTML5");
+		
+		WebElement button = driver.findElement(By.cssSelector(".submit_button"));
+		button.click();
+
+		WebElement pass = driver.findElement(By.cssSelector(".success"));
+		assertEquals("Document checking completed. No errors or warnings to show.", pass.getText());
+		
+	}
+	
 	@After
 	public void tearDown () {
 		driver.quit();

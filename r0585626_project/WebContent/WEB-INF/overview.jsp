@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<jsp:include page="WEB-INF/css.jsp"/>
+<jsp:include page="css.jsp"/>
 <title>Overview - Movie Tracker</title>
 </head>
 <body>
 	<div id="pagewrapper">
-	<jsp:include page="WEB-INF/header.jsp">
+	<jsp:include page="header.jsp">
 		<jsp:param name="page" value="Overview"/>
     </jsp:include>
 	<main>
@@ -25,7 +25,7 @@
 				try {
 					List<Film> films = (List<Film>) filmsObject;
 					for(Film f : films){
-						%> <tr class="<%= f.getName() %>">
+						%> <tr class="<%= f.getCompoundName() %>">
 							<td><%= f.getName() %></td>
 							<td><%= f.getTotalLength()%></td>
 							<td><%= f.getWatchedLength()%></td>
@@ -43,7 +43,7 @@
 			</div>
 		</article>
 	</main>
-	<jsp:include page="WEB-INF/footer.jsp"/>
+	<jsp:include page="footer.jsp"/>
 	</div>
 </body>
 </html>

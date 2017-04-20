@@ -33,7 +33,6 @@ public class FilmService {
 		}
 		try{
 			rating = Double.parseDouble(ratingSt);
-			System.out.println(100*rating % 1);
 			if((100*rating % 1) >= 10*Double.MIN_VALUE){
 				errors.add("The rating must be a number between one and ten with at most two decimals.");
 			}

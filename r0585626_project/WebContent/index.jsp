@@ -18,9 +18,9 @@
 			<h2>Movie Tracker</h2>
 			<% String name = db.getBestFilm().getName();
 			if (name != null){%>
-				<p>The best movie is <%= name  %></p>
+				<p id="calculated">The best movie is <%= name  %></p>
 			<% }else{  %>
-				<p>There is no best movie yet.</p>
+				<p id="calculated">There is no best movie yet.</p>
 			<% } %>
 			<p><a href="${pageContext.request.contextPath}/overview.jsp">Overview</a></p>
 		</article>

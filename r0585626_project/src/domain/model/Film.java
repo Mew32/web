@@ -47,5 +47,9 @@ public class Film {
 	public String getName() {
 		return name;
 	}
+	
+	public String getCompoundName(){
+		return name.replaceAll(" ", "");
+	}
 
 }
