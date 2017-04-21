@@ -40,6 +40,8 @@
 			%>
 			
 			</table>
+			
+			<p>De totale waarde van alle casinobedragen kleiner dan 1000 bedraagt <%= request.getAttribute("jackpot") %> euro.</p>
 			</div>
 		</article>
 	</main>

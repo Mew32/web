@@ -15,9 +15,9 @@ import domain.model.Film;
 import domain.model.FilmService;
 
 
-public class FilmAddTest {
+public class FilmWebsiteTest {
 
-	private static final String url = "http://localhost:8080/r0585626_project/";
+	private static final String url = "http://localhost:8080/1TX6_AdamsDaan/";
 	private WebDriver driver;
 	private FilmService service;
 	@Before
@@ -46,6 +46,10 @@ public class FilmAddTest {
 		WebElement rating = driver.findElement(By.id("rating"));
 		rating.clear();
 		rating.sendKeys("5.0");
+
+		WebElement casino = driver.findElement(By.id("casino"));
+		casino.clear();
+		casino.sendKeys("0");
 
 		WebElement button = driver.findElement(By.id("submitbtn"));
 		button.click();
@@ -135,6 +139,44 @@ public class FilmAddTest {
 		isValidHtml("add.jsp");
 	}
 	
+	@Test
+	public void test_correcte_pagina_na_jackpot(){
+driver.get(url+"add.jsp");
+		
+		WebElement naamField = driver.findElement(By.id("naam"));
+		naamField.clear();
+		naamField.sendKeys("Blooberries");
+		
+		WebElement total = driver.findElement(By.id("total_eps"));
+		total.clear();
+		total.sendKeys("18");
+		
+		WebElement watched = driver.findElement(By.id("watched_eps"));
+		watched.clear();
+		watched.sendKeys("18");
+
+		WebElement rating = driver.findElement(By.id("rating"));
+		rating.clear();
+		rating.sendKeys("5.0");
+		
+		WebElement casino = driver.findElement(By.id("casino"));
+		casino.clear();
+		casino.sendKeys("1234");
+
+		WebElement button = driver.findElement(By.id("submitbtn"));
+		button.click();
+		
+		assertEquals("Winnaar jackpot", driver.findElement(By.tagName("h2")).getText());
+		boolean found = false;
+		for(WebElement el : driver.findElements(By.className("bedrag"))){
+			if(el.getText().equals("1234")){
+				found = true;
+				break;
+			}
+		}
+		assertTrue(found);
+	}
+	
 	public void isValidHtml(String urlEnd) {
 		driver.get("https://validator.w3.org/#validate_by_uri+with_options");
 		WebElement invulveld = driver.findElement(By.id("uri"));
@@ -155,5 +197,4 @@ public class FilmAddTest {
 	public void tearDown () {
 		driver.quit();
 	}
-	
 }
