@@ -11,9 +11,9 @@ public class FilmDb {
 	
 	public FilmDb(){
 		films = new ArrayList<Film>();
-		films.add(new Film("HIMYM", 192, 192, 5 ,0));
-		films.add(new Film("The OA", 10, 10, 10,0));
-		films.add(new Film("Game Of Thrones", 50, 50, 8,0));
+		films.add(new Film("HIMYM", 192, 192, 5));
+		films.add(new Film("The OA", 10, 10, 10));
+		films.add(new Film("Game Of Thrones", 50, 50, 8));
 	}
 //	
 //	public static FilmDb getInstance(){
@@ -43,24 +43,6 @@ public class FilmDb {
 			}
 		}
 		return f;
-	}
-	
-	public int getJackPot(){
-		int sum = 0;
-		for(Film fi : getFilms()){
-			sum += fi.getCasino();
-		}
-		return sum;
-	}
-	
-	public int getJackPotSmallerThan1000(){
-		int sum = 0;
-		for(Film fi : getFilms()){
-			if(fi.getCasino() < 1000){
-				sum += fi.getCasino();
-			}
-		}
-		return sum;
 	}
 
 }

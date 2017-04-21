@@ -13,7 +13,7 @@ public class FilmService {
 		this.db = db;
 	}
 	
-	public List<String> addFilm(String name, String totalSt, String watchedSt, String ratingSt, int casino){
+	public List<String> addFilm(String name, String totalSt, String watchedSt, String ratingSt){
 		int total = 0;
 		int watched = 0;
 		double rating = 0;
@@ -39,9 +39,8 @@ public class FilmService {
 		}catch(NumberFormatException e){
 			errors.add("The rating must be a number between one and ten with at most two decimals.");
 		}
-		
 		try{
-			Film f = new Film(name, total, watched, rating, casino);
+			Film f = new Film(name, total, watched, rating);
 			db.addFilm(f);
 			return errors;
 		}catch(Exception e){
@@ -60,15 +59,6 @@ public class FilmService {
 	
 	public Film getBestFilm(){
 		return db.getBestFilm();
-	}
-
-	public int getJackPot() {
-		// TODO Auto-generated method stub
-		return db.getJackPot();
-	}
-	
-	public int getJackPotSmallerThan1000(){
-		return db.getJackPotSmallerThan1000();
 	}
 
 }

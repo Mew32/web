@@ -54,11 +54,6 @@
 			        </label>
 			    </p>
 			    <p>
-			        <label for="casino">Casino:
-			            <input id="casino" type="number" value="0" required name="casino">
-			        </label>
-			    </p>
-			    <p>
 			        <input type="submit" id="submitbtn" class="submitbtn" value="Save">
 			    </p>
 			</form>
