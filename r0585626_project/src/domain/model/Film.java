@@ -6,12 +6,14 @@ public class Film {
 	private int watched_length;
 	private int total_length;
 	private double rating;
+	private int id;
 	
 	public Film(String name, int total, int watched, double rating){
 		this.name = name;
 		setWatchedLength(watched);
 		setTotalLength(total);
 		setRating(rating);
+		setId(0);
 	}
 
 	public int getWatchedLength() {
@@ -50,6 +52,14 @@ public class Film {
 	
 	public String getCompoundName(){
 		return name.replaceAll(" ", "");
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public int getId(){
+		return id;
 	}
 
 }

@@ -1,7 +1,6 @@
 package view.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import domain.db.FilmDb;
-import domain.model.Film;
 import domain.model.FilmService;
 
 @WebServlet("/FilmServlet")
@@ -44,20 +42,20 @@ public class FilmServlet extends HttpServlet {
 		String ratingSt = request.getParameter("rating");
 		List<String> errors = service.addFilm(name, totalSt, watchedSt, ratingSt);
 		
-//		if(errors.isEmpty()){
+		if(errors.isEmpty()){
 			request.setAttribute("films", service.getFilms());
 			request.getRequestDispatcher("WEB-INF/overview.jsp").forward(request, response);
-//		}else{
-//			request.setAttribute("errors", errors);
-//			request.getRequestDispatcher("add.jsp").forward(request, response);
-//		}
-//		try{
-//			request.setAttribute("films", service.getFilms());
-//			request.getRequestDispatcher("overview.jsp").forward(request, response);
-//		}catch (Exception e){
-//			request.setAttribute("error", e.getMessage());
-//			request.getRequestDispatcher("WEB-INF/error.jsp").forward(request, response);
-//		}
+		}else{
+			request.setAttribute("errors", errors);
+			request.getRequestDispatcher("add.jsp").forward(request, response);
+		}
+		try{
+			request.setAttribute("films", service.getFilms());
+			request.getRequestDispatcher("overview.jsp").forward(request, response);
+		}catch (Exception e){
+			request.setAttribute("error", e.getMessage());
+			request.getRequestDispatcher("WEB-INF/error.jsp").forward(request, response);
+		}
 	}
 
 }

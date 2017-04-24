@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="domain.model.Film, java.util.List"%>
+    pageEncoding="UTF-8" import="domain.model.Film, java.util.Collection"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,9 +23,9 @@
 			<th>Rating</th></tr>
 			<% Object filmsObject = request.getAttribute("films");
 				try {
-					List<Film> films = (List<Film>) filmsObject;
+					Collection<Film> films = (Collection<Film>) filmsObject;
 					for(Film f : films){
-						%> <tr class="<%= f.getCompoundName() %>">
+						%> <tr id="<%= f.getId() %>" class="<%= f.getCompoundName() %>">
 							<td><%= f.getName() %></td>
 							<td><%= f.getTotalLength()%></td>
 							<td><%= f.getWatchedLength()%></td>

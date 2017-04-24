@@ -1,6 +1,7 @@
 package domain.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import domain.db.FilmDb;
@@ -53,7 +54,7 @@ public class FilmService {
 		db.addFilm(f);
 	}
 	
-	public List<Film> getFilms(){
+	public Collection<Film> getFilms(){
 		return db.getFilms();
 	}
 	
